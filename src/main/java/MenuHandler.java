@@ -169,12 +169,36 @@ public class MenuHandler {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, firstName);
             int resulSet = stmt.executeUpdate();
-            if (resulSet == 1) {
-                System.out.println("deleted");
-            }
+            System.out.println("deleted: " + resulSet);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void deleteTeacher(Connection connection, String firstName, String lastName) {
+
+        String sql = "DELETE FROM teacher WHERE first_name = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1,firstName);
+            int resultSet = stmt.executeUpdate();
+            System.out.println("deleted: " + resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteGroup(Connection connection, String name){
+        String sql = "DELETE FROM groupss WHERE name = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, name);
+            int resultSet =  stmt.executeUpdate();
+            System.out.println("deleted: " + resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

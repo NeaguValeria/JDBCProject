@@ -89,6 +89,18 @@ public class Main {
              String firstName = scanner.nextLine();
              MenuHandler.deleteStudent(connection,firstName);
          }
+         if(choice.equals("8")){
+             System.out.println("please type the first name of teacher");
+             String firstName = scanner.nextLine();
+             System.out.println("please type the last name of teacher");
+             String lastName = scanner.nextLine();
+             MenuHandler.deleteTeacher(connection,firstName, lastName);
+         }
+         if(choice.equals("9")){
+             System.out.println("please type the name of group");
+             String name = scanner.nextLine();
+             MenuHandler.deleteGroup(connection,name);
+         }
     }
 
 
