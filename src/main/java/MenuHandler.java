@@ -93,6 +93,7 @@ public class MenuHandler {
         }
     }
 
+
     public static void selectGroup(Connection connection, String name) {
         String sql = "SELECT * FROM groupss WHERE name = ?";
         ResultSet rs;

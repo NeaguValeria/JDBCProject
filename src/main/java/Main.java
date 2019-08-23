@@ -1,3 +1,5 @@
+import dao.TeacherDAO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -26,6 +28,7 @@ public class Main {
         System.out.println("10. Select student from keyboard");
         System.out.println("11. Select teacher from keyboard");
         System.out.println("12. Select group  from keyboard");
+        System.out.println("13. test");
 
 
         Scanner scanner = new Scanner(System.in);
@@ -101,6 +104,15 @@ public class Main {
              String name = scanner.nextLine();
              MenuHandler.deleteGroup(connection,name);
          }
+        if(choice.equals("13")){
+            System.out.println("please type the name of group");
+            Integer id = scanner.nextInt();
+            TeacherDAO.selectTeacherByGroupID(connection, id);
+        }
+
+
+
+
     }
 
 
